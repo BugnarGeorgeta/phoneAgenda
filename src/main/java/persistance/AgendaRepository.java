@@ -50,7 +50,7 @@ public class AgendaRepository {
     }
 
     public List<Agenda> getAgenda() throws SQLException, IOException, ClassNotFoundException {
-        String sql = "SELECT firstName, lastName, phone FROM phoneagenda";
+        String sql = "SELECT id,firstName,lastName,phone FROM phoneagenda";
 
         try (Connection connection = DatabaseConfiguration.getConnection();
              Statement statement = connection.createStatement();
@@ -59,6 +59,7 @@ public class AgendaRepository {
             List<Agenda> agendas = new ArrayList<>();
             while (resultSet.next()) {
                 Agenda agenda = new Agenda();
+                agenda.setId(resultSet.getLong("id"));
                 agenda.setFirstName(resultSet.getString("firstName"));
                 agenda.setLastName(resultSet.getString("lastName"));
                 agenda.setPhone(resultSet.getString("phone"));
@@ -69,7 +70,7 @@ public class AgendaRepository {
     }
 
     public List<Agenda> getAgendaofName(AgendaNameRequest request) throws SQLException, IOException, ClassNotFoundException {
-        String sql = "SELECT firstName, lastName, phone FROM phoneagenda WHERE firstName=? OR lastName=?";
+        String sql = "SELECT id,firstName,lastName,phone FROM phoneagenda WHERE firstName=? OR lastName=?";
 
         try (Connection connection = DatabaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -82,6 +83,7 @@ public class AgendaRepository {
             List<Agenda> agendas = new ArrayList<>();
             while (!agendas.isEmpty()) {
                 Agenda agenda = new Agenda();
+                agenda.setId(Long.parseLong("id"));
                 agenda.setFirstName("firstName");
                 agenda.setLastName("lastName");
                 agenda.setPhone("phone");
@@ -89,7 +91,6 @@ public class AgendaRepository {
 
             }
             return agendas;
-
         }
     }
 }

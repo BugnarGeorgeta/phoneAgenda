@@ -23,7 +23,7 @@ public class App {
 
        // agendaRepository.updateAgenda(request, 1);
       //  agendaRepository.deleteAgenda(1);
-        AgendaNameRequest request= new AgendaNameRequest();
-        agendaRepository.getAgendaofName(request);
+//        AgendaNameRequest request= new AgendaNameRequest();
+//        agendaRepository.getAgendaofName(request);
     }
 }
