@@ -1,10 +1,9 @@
-package web;
+package org.example.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.domain.Agenda;
-import service.AgendaService;
-import transfer.AgendaNameRequest;
-import transfer.AgendaRequest;
+import org.example.service.AgendaService;
+import org.example.transfer.AgendaRequest;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

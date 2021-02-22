@@ -1,10 +1,8 @@
-package transfer;
+package org.example.transfer;
 
-public class AgendaRequest {
-
+public class AgendaNameRequest {
     private String firstName;
     private String lastName;
-    private String phone;
 
     public String getFirstName() {
         return firstName;
@@ -22,20 +20,11 @@ public class AgendaRequest {
         this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     @Override
     public String toString() {
-        return "CreateAgendaRequest{" +
+        return "AgendaNameRequest{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
                 '}';
     }
 }

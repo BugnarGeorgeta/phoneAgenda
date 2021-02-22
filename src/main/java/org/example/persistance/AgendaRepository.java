@@ -1,8 +1,8 @@
-package persistance;
+package org.example.persistance;
 
 import org.example.domain.Agenda;
-import transfer.AgendaNameRequest;
-import transfer.AgendaRequest;
+import org.example.transfer.AgendaNameRequest;
+import org.example.transfer.AgendaRequest;
 
 import java.io.IOException;
 import java.sql.*;

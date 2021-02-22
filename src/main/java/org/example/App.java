@@ -1,8 +1,6 @@
 package org.example;
 
-import persistance.AgendaRepository;
-import transfer.AgendaNameRequest;
-import transfer.AgendaRequest;
+import org.example.persistance.AgendaRepository;
 
 import java.io.IOException;
 import java.sql.SQLException;

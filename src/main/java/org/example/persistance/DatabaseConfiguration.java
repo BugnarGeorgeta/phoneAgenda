@@ -1,4 +1,4 @@
-package persistance;
+package org.example.persistance;
 
 import java.io.IOException;
 import java.io.InputStream;

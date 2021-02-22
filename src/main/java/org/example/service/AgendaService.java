@@ -1,9 +1,9 @@
-package service;
+package org.example.service;
 
 import org.example.domain.Agenda;
-import persistance.AgendaRepository;
-import transfer.AgendaNameRequest;
-import transfer.AgendaRequest;
+import org.example.persistance.AgendaRepository;
+import org.example.transfer.AgendaNameRequest;
+import org.example.transfer.AgendaRequest;
 
 import java.io.IOException;
 import java.sql.SQLException;
