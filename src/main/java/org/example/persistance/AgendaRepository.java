@@ -56,16 +56,7 @@ public class AgendaRepository {
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
 
-            List<Agenda> agendas = new ArrayList<>();
-            while (resultSet.next()) {
-                Agenda agenda = new Agenda();
-                agenda.setId(resultSet.getLong("id"));
-                agenda.setFirstName(resultSet.getString("firstName"));
-                agenda.setLastName(resultSet.getString("lastName"));
-                agenda.setPhone(resultSet.getString("phone"));
-                agendas.add(agenda);
-            }
-            return agendas;
+            return getAgenda(resultSet);
         }
     }
 
@@ -78,19 +69,25 @@ public class AgendaRepository {
             preparedStatement.setString(1, request.getFirstName());
             preparedStatement.setString(2, request.getLastName());
 
-            preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            List<Agenda> agendas = new ArrayList<>();
-            while (!agendas.isEmpty()) {
-                Agenda agenda = new Agenda();
-                agenda.setId(Long.parseLong("id"));
-                agenda.setFirstName("firstName");
-                agenda.setLastName("lastName");
-                agenda.setPhone("phone");
-                agendas.add(agenda);
-
-            }
-            return agendas;
+            return getAgenda(resultSet);
         }
+    }
+
+    private List<Agenda> getAgenda(ResultSet resultSet) throws SQLException {
+        List<Agenda> agendas = new ArrayList<>();
+        while (resultSet.next()) {
+            Agenda agenda = new Agenda();
+            agenda.setId(resultSet.getLong("id"));
+            agenda.setFirstName(resultSet.getString("firstName"));
+            agenda.setLastName(resultSet.getString("lastName"));
+            agenda.setPhone(resultSet.getString("phone"));
+
+            agendas.add(agenda);
+
+
+        }
+        return agendas;
     }
 }
